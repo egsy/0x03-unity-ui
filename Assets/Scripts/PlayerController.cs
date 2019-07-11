@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     // This is a reference to the Rigidbody component called "rb"
     public Rigidbody rb;
-    public float speed = 88888f;
+    public float speed = 888f;
 
     /// <summary>
     /// Start is called before the first frame update
