@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     public float speed = 888f;
     private int score = 0;
+    public int health = 5;
 
     /// <summary>
     /// Detect collisions between the Player and GameObjects with Colliders attached
@@ -22,6 +23,12 @@ public class PlayerController : MonoBehaviour
     /// <param name="other">GameObject</param>
     void OnTriggerEnter(Collider other)
     {
+        /// Decrement value of health when Player triggers objects tagged Trap
+        if (other.gameObject.tag == "Trap")
+        {
+            score -= 1;
+            Debug.Log(string.Format("Health: {0}", health));
+        }
 
         /// Increments value of score when Player triggers objects tagged Pickup
         if (other.gameObject.tag == "Pickup")
