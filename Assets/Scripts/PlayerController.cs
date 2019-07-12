@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Introduces public class to control player movement
@@ -23,6 +24,12 @@ public class PlayerController : MonoBehaviour
     /// <param name="other">GameObject</param>
     void OnTriggerEnter(Collider other)
     {
+        /// Alert player that objective was reached
+        if (other.gameObject.tag == "Goal")
+        {
+            Debug.Log(string.Format("You win!"));
+        }
+
         /// Decrement value of health when Player triggers objects tagged Trap
         if (other.gameObject.tag == "Trap")
         {
@@ -72,11 +79,18 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Udpate is called once per frame
+    /// Update is called once per frame
+    /// Game is reset once health reaches 0
     /// </summary>
     void Update()
     {
+        if (health == 0)
+        {
+            Debug.Log("Game Over!");
+            SceneManager.LoadScene("maze");
+            health = 5;
+            score = 0;
+        }
     }
-
 }
 
