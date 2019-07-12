@@ -7,18 +7,18 @@ using UnityEngine;
 /// </summary>
 public class Rotator : MonoBehaviour
 {
-    public float rotate = 100.0f;
+    public Vector3 rotate;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        rotate = new Vector3(45, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
         // transform.Rotate()
-        transform.Rotate(rotate * Time.deltaTime, 0, 0);
+        transform.Rotate(rotate * Time.deltaTime);
     }
 }
