@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         /// Decrement value of health when Player triggers objects tagged Trap
         if (other.gameObject.tag == "Trap")
         {
-            score -= 1;
+            health -= 1;
             Debug.Log(string.Format("Health: {0}", health));
         }
 
