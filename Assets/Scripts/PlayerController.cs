@@ -14,6 +14,23 @@ public class PlayerController : MonoBehaviour
     // This is a reference to the Rigidbody component called "rb"
     public Rigidbody rb;
     public float speed = 888f;
+    private int score = 0;
+
+    /// <summary>
+    /// Detect collisions between the Player and GameObjects with Colliders attached
+    /// </summary>
+    /// <param name="other">GameObject</param>
+    void OnTriggerEnter(Collider other)
+    {
+
+        /// Increments value of score when Player triggers objects tagged Pickup
+        if (other.gameObject.tag == "Pickup")
+        {
+            score += 1;
+            Debug.Log(string.Format("Score: {0}", score));
+            Destroy(other.gameObject);
+        }
+    }
 
     /// <summary>
     /// Start is called before the first frame update

@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class Rotator : MonoBehaviour
 {
-    public float rotate;
+    public float rotate = 100.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class Rotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rotate = 45.0f;
+        // transform.Rotate()
         transform.Rotate(rotate * Time.deltaTime, 0, 0);
     }
 }
