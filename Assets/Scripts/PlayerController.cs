@@ -59,6 +59,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        health = 5;
+        score = 0;
     }
 
     /// <summary>
@@ -93,15 +95,12 @@ public class PlayerController : MonoBehaviour
     {
         SetScoreText();
         SetHealthText();
-        // if (health == 0)
-        // {
-        // Debug.Log("Game Over!");
-        // winLoseText.text = "Game Over!";
-        // winLoseText.color = Color.white;
-        // winLoseBG.color = Color.red;
-        StartCoroutine(LoadScene(3));
-        // SceneManager.LoadScene("maze");
-        // }
+        if (health == 0)
+        {
+            CountHealth();
+            // Debug.Log("Game Over!");
+            StartCoroutine(LoadScene(3));
+        }
     }
 
     /// <summary>
@@ -120,24 +119,16 @@ public class PlayerController : MonoBehaviour
         healthText.text = "Health: " + health.ToString();
     }
 
-    void CheckHealth()
+    void CountHealth()
     {
-        if (health == 0)
-        {
-            winLoseText.text = "Game Over!";
-            winLoseText.color = Color.white;
-            winLoseBG.color = Color.red;
-        }
+        winlose.SetActive(true);
+        winLoseText.text = "Game Over!";
+        winLoseText.color = Color.white;
+        winLoseBG.color = Color.red;
     }
     IEnumerator LoadScene(float seconds)
     {
-        for (int i = 0; i < health; i++)
-        {
-            CheckHealth();
-            yield return new WaitForSeconds(3f);
-        }
+        yield return new WaitForSeconds(seconds);
         SceneManager.LoadScene("maze");
-        health = 5;
-        score = 0;
     }
 }
