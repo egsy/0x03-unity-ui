@@ -698,7 +698,7 @@ MonoBehaviour:
   health: 5
   scoreText: {fileID: 1794567232}
   healthText: {fileID: 1335165930}
-  winLose: []
+  winLose: {fileID: 1704262036}
 --- !u!1 &101275641
 GameObject:
   m_ObjectHideFlags: 0
@@ -6366,7 +6366,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704262036}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41c53c25550de48a5b75017e191101e7, type: 3}
   m_Name: 
