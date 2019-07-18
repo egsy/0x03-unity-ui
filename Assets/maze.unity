@@ -4807,7 +4807,7 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Health: 5'
@@ -6293,6 +6293,7 @@ GameObject:
   - component: {fileID: 1704262037}
   - component: {fileID: 1704262039}
   - component: {fileID: 1704262038}
+  - component: {fileID: 1704262040}
   m_Layer: 8
   m_Name: WinLoseBG
   m_TagString: Untagged
@@ -6357,6 +6358,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704262036}
   m_CullTransparentMesh: 0
+--- !u!114 &1704262040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704262036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c53c25550de48a5b75017e191101e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1725455260
 PrefabInstance:
   m_ObjectHideFlags: 0
