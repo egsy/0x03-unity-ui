@@ -120,9 +120,4 @@ public class PlayerController : MonoBehaviour
     {
         healthText.text = "Health: " + health.ToString();
     }
-
-    void WinLoseText()
-    {
-        // transform.
-    }
 }
