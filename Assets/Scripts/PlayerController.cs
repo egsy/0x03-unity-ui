@@ -101,6 +101,10 @@ public class PlayerController : MonoBehaviour
             // Debug.Log("Game Over!");
             StartCoroutine(LoadScene(3));
         }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     /// <summary>
