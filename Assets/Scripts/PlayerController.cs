@@ -96,10 +96,10 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Updte ScoreText object with current score
+    /// Update ScoreText object with current score
     /// </summary>
     void SetScoreText()
     {
-        scoreText.text = score.ToString();
+        scoreText.text = "Score: " + score.ToString();
     }
 }
