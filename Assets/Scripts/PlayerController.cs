@@ -93,15 +93,15 @@ public class PlayerController : MonoBehaviour
     {
         SetScoreText();
         SetHealthText();
-        if (health == 0)
-        {
-            // Debug.Log("Game Over!");
-            // winLoseText.text = "Game Over!";
-            // winLoseText.color = Color.white;
-            // winLoseBG.color = Color.red;
-            StartCoroutine(LoadScene(3));
-            // SceneManager.LoadScene("maze");
-        }
+        // if (health == 0)
+        // {
+        // Debug.Log("Game Over!");
+        // winLoseText.text = "Game Over!";
+        // winLoseText.color = Color.white;
+        // winLoseBG.color = Color.red;
+        StartCoroutine(LoadScene(3));
+        // SceneManager.LoadScene("maze");
+        // }
     }
 
     /// <summary>
@@ -131,13 +131,13 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator LoadScene(float seconds)
     {
-        for (; ; )
+        for (int i = 0; i < health; i++)
         {
             CheckHealth();
             yield return new WaitForSeconds(3f);
-            SceneManager.LoadScene("maze");
-            health = 5;
-            score = 0;
         }
+        SceneManager.LoadScene("maze");
+        health = 5;
+        score = 0;
     }
 }
