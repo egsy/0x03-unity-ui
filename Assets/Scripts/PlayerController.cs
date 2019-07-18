@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private int score = 0;
     public int health = 5;
     public Text scoreText;
+    public Text healthText;
 
     /// <summary>
     /// Detect collisions between the Player and GameObjects with Colliders attached
@@ -86,6 +87,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         SetScoreText();
+        SetHealthText();
         if (health == 0)
         {
             Debug.Log("Game Over!");
@@ -101,5 +103,10 @@ public class PlayerController : MonoBehaviour
     void SetScoreText()
     {
         scoreText.text = "Score: " + score.ToString();
+    }
+
+    void SetHealthText()
+    {
+        healthText.text = "Health: " + health.ToString();
     }
 }
