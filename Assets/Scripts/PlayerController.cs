@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Trap")
         {
             health -= 1;
-            Debug.Log(string.Format("Health: {0}", health));
         }
 
         /// Increments value of score when Player triggers objects tagged Pickup
@@ -98,13 +97,16 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Update ScoreText object with current score
+    /// Updates ScoreText object with current score
     /// </summary>
     void SetScoreText()
     {
         scoreText.text = "Score: " + score.ToString();
     }
 
+    /// <summary>
+    /// Updates HealthText object with current health
+    /// </summary>
     void SetHealthText()
     {
         healthText.text = "Health: " + health.ToString();
