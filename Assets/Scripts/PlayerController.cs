@@ -20,7 +20,9 @@ public class PlayerController : MonoBehaviour
     public int health = 5;
     public Text scoreText;
     public Text healthText;
-    public Image winLoseImage;
+    public GameObject winlose;
+    public Image winLoseBG;
+    public Text winLoseText;
 
     /// <summary>
     /// Detect collisions between the Player and GameObjects with Colliders attached
@@ -31,11 +33,10 @@ public class PlayerController : MonoBehaviour
         /// Alert player that objective was reached
         if (other.gameObject.tag == "Goal")
         {
-            winLoseImage.SetActive(true);
-            Debug.Log(string.Format("You win!"));
-            // transform.winLose.SetActive(true);
-            // transform
-
+            winlose.SetActive(true);
+            winLoseBG.color = Color.green;
+            winLoseText.color = Color.black;
+            winLoseText.text = "You win!";
         }
 
         /// Decrement value of health when Player triggers objects tagged Trap
