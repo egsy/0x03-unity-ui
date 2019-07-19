@@ -16,10 +16,15 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
-        if (colorblindMode == true)
+        if (colorblindMode.isOn)
         {
             trapMat.color = new Color32(255, 112, 0, 1);
             goalMat.color = Color.blue;
+        }
+        else
+        {
+            trapMat.color = Color.red;
+            goalMat.color = Color.green;
         }
     }
 
@@ -29,5 +34,6 @@ public class MainMenu : MonoBehaviour
     public void QuitMaze()
     {
         Debug.Log("Quit Game");
+        Application.Quit();
     }
 }
