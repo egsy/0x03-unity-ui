@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
 
